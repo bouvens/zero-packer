@@ -1,5 +1,11 @@
-import React, { PropTypes } from 'react'
+import React  from 'react'
 import { LabeledControl } from './LabeledControl'
+import propTypes from './propTypes'
+
+function selectAll () {
+    console.log(this)
+    this.setSelectionRange(0, this.value.length)
+}
 
 export const LabeledTextarea = (props) => (
     <LabeledControl
@@ -8,15 +14,12 @@ export const LabeledTextarea = (props) => (
     >
         <textarea
             id={props.id}
-            value={props.value || null}
+            value={props.value || ''}
             onChange={props.onChange}
+            readOnly={props.readOnly}
+            onClick={selectAll.bind(this)}
         />
     </LabeledControl>
 )
 
-LabeledTextarea.propTypes = {
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func,
-}
+LabeledTextarea.propTypes = propTypes

@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
+import React  from 'react'
 import { LabeledControl } from './LabeledControl'
+import propTypes from './propTypes'
 
 export const LabeledInput = (props) => (
     <LabeledControl
@@ -8,15 +9,11 @@ export const LabeledInput = (props) => (
     >
         <input
             id={props.id}
-            value={props.value || null}
+            value={props.value || ''}
             onChange={props.onChange}
+            readOnly={props.readOnly}
         />
     </LabeledControl>
 )
 
-LabeledInput.propTypes = {
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func,
-}
+LabeledInput.propTypes = propTypes
