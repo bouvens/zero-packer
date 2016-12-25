@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { encodeToSymbols, decodeFromSymbols } from '../coder'
 import { LabeledTextarea } from './LabeledControl'
+import './ZeroPacker.css'
 
 const IDS = {
     textToPacked: 'textToPacked',
@@ -43,7 +44,7 @@ export default class ZeroPacker extends React.Component {
                     onChange={this.changeHandler(IDS.textToPacked)}
                     onFocus={this.selectAll}
                 />
-                →
+                <div className="arrow">→</div>
                 <LabeledTextarea
                     id={IDS.packedFromText}
                     label="Packed"
@@ -51,7 +52,7 @@ export default class ZeroPacker extends React.Component {
                     readOnly
                     onClick={this.selectAll}
                 />
-                <button onClick={this.move}>Move packed ↓</button>
+                <button className="move" onClick={this.move}>Move packed ↓</button>
                 <LabeledTextarea
                     id={IDS.packedToText}
                     label="Packed"
@@ -59,7 +60,7 @@ export default class ZeroPacker extends React.Component {
                     onChange={this.changeHandler(IDS.packedToText)}
                     onClick={this.selectAll}
                 />
-                →
+                <div className="arrow">→</div>
                 <LabeledTextarea
                     id={IDS.textFromPacked}
                     label="Text"

@@ -20,7 +20,7 @@ export function decodeFromSymbols (stringForDecoding, symbols) {
     const base = Math.min(symbols.length - 1, 36) // 16
 
     return stringForDecoding // '0abg74g65g73g74gbb'
-        .slice(1)
+        .slice(1) // 'abg74g65g73g74gbb'
         .split(symbols[base]) // ['ab', '74', '65', '73', '74', 'bb']
         .map((encodedNumber) => {
             const asciiNumber = encodedNumber // 'ab'

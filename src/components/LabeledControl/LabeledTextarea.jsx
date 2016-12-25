@@ -1,6 +1,7 @@
 import React  from 'react'
 import { LabeledControl } from './LabeledControl'
 import propTypes from './propTypes'
+import './LabeledTextarea.css'
 
 export class LabeledTextarea extends React.Component {
     static propTypes = propTypes
