@@ -77,7 +77,7 @@ module.exports = {
         'react/jsx-no-bind': 2,
         'react/jsx-equals-spacing': [1, 'never'],
         'react/jsx-curly-spacing': [1, 'never'],
-        'react/jsx-space-before-closing' : [ 'error', 'never' ],
+        'react/jsx-space-before-closing' : [ 'error', 'always' ],
         'react/prefer-es6-class': 1,
         'react/sort-comp': [1, {
             order: [
