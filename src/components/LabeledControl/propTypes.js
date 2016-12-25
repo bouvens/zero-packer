@@ -6,4 +6,5 @@ export default {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func,
     onClick: PropTypes.func,
+    onFocus: PropTypes.func,
 }

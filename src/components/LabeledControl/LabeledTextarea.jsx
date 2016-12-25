@@ -21,6 +21,7 @@ export class LabeledTextarea extends React.Component {
                     onChange={this.props.onChange}
                     readOnly={this.props.readOnly}
                     onClick={this.props.onClick ? this.props.onClick(this) : null}
+                    onFocus={this.props.onFocus ? this.props.onFocus(this) : null}
                 />
             </LabeledControl>
         )

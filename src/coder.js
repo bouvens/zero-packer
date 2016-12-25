@@ -13,13 +13,14 @@ export function encodeToSymbols (stringForEncoding, symbols) {
             .join('') // 'ab'
         )
 
-    return charCodes.join(symbols[base]) // 'abg74g65g73g74gbb'
+    return `0${charCodes.join(symbols[base])}` // '0abg74g65g73g74gbb'
 }
 
 export function decodeFromSymbols (stringForDecoding, symbols) {
     const base = Math.min(symbols.length - 1, 36) // 16
 
-    return stringForDecoding // 'abg74g65g73g74gbb'
+    return stringForDecoding // '0abg74g65g73g74gbb'
+        .slice(1)
         .split(symbols[base]) // ['ab', '74', '65', '73', '74', 'bb']
         .map((encodedNumber) => {
             const asciiNumber = encodedNumber // 'ab'

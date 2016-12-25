@@ -4,36 +4,22 @@ import './App.css'
 
 const DEFAULTS = {
     textToPacked: '«test»',
-    packedToText: '«test»',
-}
-const IDS = {
-    textToPacked: 'textToPacked',
-    packedFromText: 'packedFromText',
-    packedToText: 'packedToText',
-    textFromPacked: 'textFromPacked',
+    packedToText: '',
 }
 const SYMBOLS = [
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-]
+    0x2060,
+    0x2061,
+    0x2062,
+    0x2063,
+    0x180E,
+    0x200B,
+    0x200C,
+    0x200D,
+    0xFEFF,
+].map((uCode) => String.fromCharCode(uCode))
 
 const App = () => (
-    <ZeroPacker defaults={DEFAULTS} ids={IDS} symbols={SYMBOLS} />
+    <ZeroPacker defaults={DEFAULTS} symbols={SYMBOLS} />
 )
 
 export default App

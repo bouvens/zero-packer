@@ -2,10 +2,16 @@ import React, { PropTypes } from 'react'
 import { encodeToSymbols, decodeFromSymbols } from '../coder'
 import { LabeledTextarea } from './LabeledControl'
 
+const IDS = {
+    textToPacked: 'textToPacked',
+    packedFromText: 'packedFromText',
+    packedToText: 'packedToText',
+    textFromPacked: 'textFromPacked',
+}
+
 export default class ZeroPacker extends React.Component {
     static propTypes = {
         defaults: PropTypes.object,
-        ids: PropTypes.object,
         symbols: PropTypes.array,
     }
 
@@ -22,7 +28,7 @@ export default class ZeroPacker extends React.Component {
     getDecoded = () => decodeFromSymbols(this.state.packedToText, this.props.symbols)
 
     move = () => {
-        this.setState({ [this.props.ids.packedToText]: this.getEncoded() })
+        this.setState({ [IDS.packedToText]: this.getEncoded() })
     }
 
     selectAll = (_this) => () => _this.textArea.setSelectionRange(0, _this.textArea.value.length)
@@ -31,14 +37,15 @@ export default class ZeroPacker extends React.Component {
         return (
             <div className="encoder">
                 <LabeledTextarea
-                    id={this.props.ids.textToPacked}
+                    id={IDS.textToPacked}
                     label="Text"
                     value={this.state.textToPacked}
-                    onChange={this.changeHandler(this.props.ids.textToPacked)}
+                    onChange={this.changeHandler(IDS.textToPacked)}
+                    onFocus={this.selectAll}
                 />
                 →
                 <LabeledTextarea
-                    id={this.props.ids.packedFromText}
+                    id={IDS.packedFromText}
                     label="Packed"
                     value={this.getEncoded()}
                     readOnly
@@ -46,14 +53,15 @@ export default class ZeroPacker extends React.Component {
                 />
                 <button onClick={this.move}>Move packed ↓</button>
                 <LabeledTextarea
-                    id={this.props.ids.packedToText}
+                    id={IDS.packedToText}
                     label="Packed"
                     value={this.state.packedToText}
-                    onChange={this.changeHandler(this.props.ids.packedToText)}
+                    onChange={this.changeHandler(IDS.packedToText)}
+                    onClick={this.selectAll}
                 />
                 →
                 <LabeledTextarea
-                    id={this.props.ids.textFromPacked}
+                    id={IDS.textFromPacked}
                     label="Text"
                     value={this.getDecoded()}
                     readOnly
