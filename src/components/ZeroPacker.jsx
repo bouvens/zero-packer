@@ -25,6 +25,8 @@ export default class ZeroPacker extends React.Component {
         this.setState({ [this.props.ids.packedToText]: this.getEncoded() })
     }
 
+    selectAll = (_this) => () => _this.textArea.setSelectionRange(0, _this.textArea.value.length)
+
     render () {
         return (
             <div className="encoder">
@@ -40,6 +42,7 @@ export default class ZeroPacker extends React.Component {
                     label="Packed"
                     value={this.getEncoded()}
                     readOnly
+                    onClick={this.selectAll}
                 />
                 <button onClick={this.move}>Move packed ↓</button>
                 <LabeledTextarea
@@ -54,6 +57,7 @@ export default class ZeroPacker extends React.Component {
                     label="Text"
                     value={this.getDecoded()}
                     readOnly
+                    onClick={this.selectAll}
                 />
             </div>
         )

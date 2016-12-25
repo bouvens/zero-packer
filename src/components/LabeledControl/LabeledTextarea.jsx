@@ -2,24 +2,27 @@ import React  from 'react'
 import { LabeledControl } from './LabeledControl'
 import propTypes from './propTypes'
 
-function selectAll () {
-    console.log(this)
-    this.setSelectionRange(0, this.value.length)
+export class LabeledTextarea extends React.Component {
+    static propTypes = propTypes
+
+    textArea = null
+    saveRef = (textArea) => { this.textArea = textArea }
+
+    render () {
+        return (
+            <LabeledControl
+                id={this.props.id}
+                label={this.props.label}
+            >
+                <textarea
+                    id={this.props.id}
+                    ref={this.saveRef}
+                    value={this.props.value || ''}
+                    onChange={this.props.onChange}
+                    readOnly={this.props.readOnly}
+                    onClick={this.props.onClick ? this.props.onClick(this) : null}
+                />
+            </LabeledControl>
+        )
+    }
 }
-
-export const LabeledTextarea = (props) => (
-    <LabeledControl
-        id={props.id}
-        label={props.label}
-    >
-        <textarea
-            id={props.id}
-            value={props.value || ''}
-            onChange={props.onChange}
-            readOnly={props.readOnly}
-            onClick={selectAll.bind(this)}
-        />
-    </LabeledControl>
-)
-
-LabeledTextarea.propTypes = propTypes

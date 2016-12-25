@@ -5,4 +5,5 @@ export default {
     label: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func,
+    onClick: PropTypes.func,
 }
