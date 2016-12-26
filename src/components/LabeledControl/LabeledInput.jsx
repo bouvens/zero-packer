@@ -6,7 +6,7 @@ export class LabeledInput extends React.Component {
     static propTypes = propTypes
 
     input = null
-    saveRef = (input) => { this.input = input }
+    saveRef = (input) => this.input = input
 
     render () {
         return (

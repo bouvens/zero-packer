@@ -7,7 +7,7 @@ export class LabeledTextarea extends React.Component {
     static propTypes = propTypes
 
     textArea = null
-    saveRef = (textArea) => { this.textArea = textArea }
+    saveRef = (textArea) => this.textArea = textArea
 
     render () {
         return (
