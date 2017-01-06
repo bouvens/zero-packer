@@ -1,4 +1,4 @@
-export function encodeToSymbols (stringForEncoding, symbols) {
+export function encodeToSymbols (stringForEncoding, symbols, leader) {
     const base = Math.min(symbols.length - 1, 36) // 16
     const charCodes = stringForEncoding // '«test»'
         .split('') // ['«', 't', 'e', 's', 't', '»']
@@ -13,14 +13,14 @@ export function encodeToSymbols (stringForEncoding, symbols) {
             .join('') // 'ab'
         )
 
-    return `0${charCodes.join(symbols[base])}` // '0abg74g65g73g74gbb'
+    return `${leader}${charCodes.join(symbols[base])}` // '0abg74g65g73g74gbb'
 }
 
-export function decodeFromSymbols (stringForDecoding, symbols) {
+export function decodeFromSymbols (stringForDecoding, symbols, leader) {
     const base = Math.min(symbols.length - 1, 36) // 16
 
     return stringForDecoding // '0abg74g65g73g74gbb'
-        .slice(1) // 'abg74g65g73g74gbb'
+        .slice(leader.length) // 'abg74g65g73g74gbb'
         .split(symbols[base]) // ['ab', '74', '65', '73', '74', 'bb']
         .map((encodedNumber) => {
             const asciiNumber = encodedNumber // 'ab'

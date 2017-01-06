@@ -1,16 +1,27 @@
-* {
-    box-sizing: border-box;
+.setter {
+    margin-bottom: 15px;
 }
-.encoder {
-    margin: 1em 2em;
+.setter a {
+    padding-bottom: 1px;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    color: blue;
+}
+
+#leader {
+    width: 20px;
+    margin-bottom: 5em;
+}
+#symbols {
+    width: 52%;
 }
 .labeled-input {
     display: inline-block;
-    width: 40%;
+    width: 45%;
 }
 .arrow {
     display: inline-block;
-    width: 10%;
+    width: 5%;
     text-align: center;
 }
 .move {

@@ -5,8 +5,8 @@ import propTypes from './propTypes'
 export class LabeledInput extends React.Component {
     static propTypes = propTypes
 
-    input = null
-    saveRef = (input) => { this.input = input }
+    control = null
+    saveRef = (control) => { this.control = control }
 
     render () {
         return (

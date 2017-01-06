@@ -6,8 +6,8 @@ import './LabeledTextarea.css'
 export class LabeledTextarea extends React.Component {
     static propTypes = propTypes
 
-    textArea = null
-    saveRef = (textArea) => { this.textArea = textArea }
+    control = null
+    saveRef = (control) => { this.control = control }
 
     render () {
         return (
