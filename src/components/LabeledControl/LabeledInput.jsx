@@ -6,7 +6,7 @@ export class LabeledInput extends React.Component {
     static propTypes = propTypes
 
     control = null
-    saveRef = (control) => { this.control = control }
+    saveRef = (control) => this.control = control
 
     render () {
         return (
