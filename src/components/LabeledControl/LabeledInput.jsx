@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import { LabeledControl } from './LabeledControl'
 import propTypes from './propTypes'
 
