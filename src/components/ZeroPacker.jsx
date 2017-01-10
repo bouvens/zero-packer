@@ -79,15 +79,7 @@ export default class ZeroPacker extends React.Component {
         defaults: DEFAULTS,
     }
 
-    constructor (props) {
-        super(props)
-        this.state = this.props.defaults
-        this.setters = SETTERS.map((setter, index) => <Setter
-            onClick={(state) => () => this.setState(state)}
-            key={index}
-            {...setter}
-        />)
-    }
+    state = this.props.defaults
 
     changeHandler = (state) => (event) => {
         const initialValue = event.target.value
@@ -123,7 +115,13 @@ export default class ZeroPacker extends React.Component {
     render () {
         return (
             <div className="encoder">
-                {this.setters}
+                {SETTERS.map((setter, index) => (
+                    <Setter
+                        onClick={(state) => () => this.setState(state)}
+                        key={index}
+                        {...setter}
+                    />
+                ))}
                 <LabeledInput
                     id={IDS.leader}
                     label="Leading symbol"
