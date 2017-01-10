@@ -60,14 +60,14 @@ const SETTERS = [
 
 const Setter = (props) => (
     <div className="setter">
-        <a onClick={props.onClick(props.params)} tabIndex={props.key + 1}>{props.text}</a>
+        <a onClick={props.onClick(props.params)} tabIndex={props.tabIndex}>{props.text}</a>
     </div>
 )
 
 Setter.propTypes = {
     params: PropTypes.object,
     text: PropTypes.string,
-    key: PropTypes.number,
+    tabIndex: PropTypes.number,
     onClick: PropTypes.func,
 }
 
@@ -119,6 +119,7 @@ export default class ZeroPacker extends React.Component {
                     <Setter
                         onClick={(state) => () => this.setState(state)}
                         key={index}
+                        tabIndex={index + 1}
                         {...setter}
                     />
                 ))}
