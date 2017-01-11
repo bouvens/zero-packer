@@ -1,6 +1,7 @@
 .setter {
     margin-bottom: 15px;
 }
+
 .setter a {
     padding-bottom: 1px;
     border-bottom: 1px dashed;
@@ -12,18 +13,22 @@
     width: 20px;
     margin-bottom: 5em;
 }
+
 #symbols {
     width: 52%;
 }
+
 .labeled-input {
     display: inline-block;
     width: 45%;
 }
+
 .arrow {
     display: inline-block;
     width: 5%;
     text-align: center;
 }
+
 .move {
     display: block;
     padding: 0.7em 1em;
