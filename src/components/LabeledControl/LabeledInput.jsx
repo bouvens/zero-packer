@@ -1,12 +1,9 @@
 import React from 'react'
 import { LabeledControl } from './LabeledControl'
-import propTypes from './propTypes'
+import { defaultPropTypes, setControl } from './common'
 
 export class LabeledInput extends React.Component {
-    static propTypes = propTypes
-
-    control = null
-    saveRef = (control) => this.control = control
+    static propTypes = defaultPropTypes
 
     render () {
         return (
@@ -16,7 +13,7 @@ export class LabeledInput extends React.Component {
             >
                 <input
                     id={this.props.id}
-                    ref={this.saveRef}
+                    ref={setControl(this)}
                     value={this.props.value || ''}
                     onChange={this.props.onChange}
                     readOnly={this.props.readOnly}

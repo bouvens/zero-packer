@@ -1,13 +1,10 @@
 import React from 'react'
 import { LabeledControl } from './LabeledControl'
-import propTypes from './propTypes'
+import { defaultPropTypes, setControl } from './common'
 import './LabeledTextarea.css'
 
 export class LabeledTextarea extends React.Component {
-    static propTypes = propTypes
-
-    control = null
-    saveRef = (control) => this.control = control
+    static propTypes = defaultPropTypes
 
     render () {
         return (
@@ -17,7 +14,7 @@ export class LabeledTextarea extends React.Component {
             >
                 <textarea
                     id={this.props.id}
-                    ref={this.saveRef}
+                    ref={setControl(this)}
                     value={this.props.value || ''}
                     onChange={this.props.onChange}
                     readOnly={this.props.readOnly}
