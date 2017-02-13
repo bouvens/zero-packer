@@ -4,9 +4,9 @@ import './LabeledInput.css'
 export class LabeledInput extends React.Component {
     static propTypes = {
         id: PropTypes.string.isRequired,
-        stateName: PropTypes.string,
         label: PropTypes.string.isRequired,
         state: PropTypes.object,
+        stateName: PropTypes.string,
         value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         onChange: PropTypes.func,
         onClick: PropTypes.func,
@@ -14,7 +14,7 @@ export class LabeledInput extends React.Component {
         multiLine: PropTypes.bool,
     }
 
-    defaultProps = {
+    static defaultProps = {
         multiLine: false,
     }
 

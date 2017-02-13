@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { encodeToSymbols, decodeFromSymbols } from '../coder'
-import { LabeledInput } from './LabeledControl'
+import { LabeledConnector, LabeledInput } from './LabeledControl'
 import './ZeroPacker.css'
 
 const DEFAULTS = {
@@ -123,58 +123,50 @@ export default class ZeroPacker extends React.Component {
                         {...setter}
                     />
                 ))}
-                <LabeledInput
-                    id={IDS.leader}
-                    label="Leading symbol"
-                    className="leader"
+                <LabeledConnector
                     state={this.state}
                     onChange={this.changeHandler}
                     onFocus={this.selectAll}
-                />
-                <div className="arrow">+</div>
-                <LabeledInput
-                    id={IDS.symbols}
-                    label="Symbols for packing"
-                    className="symbols"
-                    state={this.state}
-                    onChange={this.changeHandler}
-                    onFocus={this.selectAll}
-                />
-                <LabeledInput
-                    id={IDS.textToPacked}
-                    label="Text"
-                    state={this.state}
-                    onChange={this.changeHandler}
-                    onFocus={this.selectAll}
-                    multiLine
-                />
-                <div className="arrow">→</div>
-                <LabeledInput
-                    id={IDS.packedFromText}
-                    label="Packed"
-                    value={this.getEncoded()}
-                    readOnly
-                    onClick={this.selectAll}
-                    multiLine
-                />
-                <button className="move" onClick={this.move}>Move packed ↓</button>
-                <LabeledInput
-                    id={IDS.packedToText}
-                    label="Packed"
-                    state={this.state}
-                    onChange={this.changeHandler}
-                    onClick={this.selectAll}
-                    multiLine
-                />
-                <div className="arrow">→</div>
-                <LabeledInput
-                    id={IDS.textFromPacked}
-                    label="Text"
-                    value={this.getDecoded()}
-                    readOnly
-                    onClick={this.selectAll}
-                    multiLine
-                />
+                >
+                    <LabeledInput
+                        id={IDS.leader}
+                        label="Leading symbol"
+                        className="leader"
+                    />
+                    <div className="arrow">+</div>
+                    <LabeledInput
+                        id={IDS.symbols}
+                        label="Symbols for packing"
+                        className="symbols"
+                    />
+                    <LabeledInput
+                        id={IDS.textToPacked}
+                        label="Text"
+                        multiLine
+                    />
+                    <div className="arrow">→</div>
+                    <LabeledInput
+                        id={IDS.packedFromText}
+                        label="Packed"
+                        value={this.getEncoded()}
+                        readOnly
+                        multiLine
+                    />
+                    <button className="move" onClick={this.move}>Move packed ↓</button>
+                    <LabeledInput
+                        id={IDS.packedToText}
+                        label="Packed"
+                        multiLine
+                    />
+                    <div className="arrow">→</div>
+                    <LabeledInput
+                        id={IDS.textFromPacked}
+                        label="Text"
+                        value={this.getDecoded()}
+                        readOnly
+                        multiLine
+                    />
+                </LabeledConnector>
             </div>
         )
     }
