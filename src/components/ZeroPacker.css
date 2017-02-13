@@ -9,12 +9,12 @@
     color: blue;
 }
 
-#leader {
+#labeled-control-leader {
     width: 20px;
     margin-bottom: 5em;
 }
 
-#symbols {
+#labeled-control-symbols {
     width: 52%;
 }
 

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { encodeToSymbols, decodeFromSymbols } from '../coder'
-import { LabeledInput, LabeledTextarea } from './LabeledControl'
+import { LabeledInput } from './LabeledControl'
 import './ZeroPacker.css'
 
 const DEFAULTS = {
@@ -127,8 +127,8 @@ export default class ZeroPacker extends React.Component {
                     id={IDS.leader}
                     label="Leading symbol"
                     className="leader"
-                    value={this.state[IDS.leader]}
-                    onChange={this.changeHandler(IDS.leader)}
+                    state={this.state}
+                    onChange={this.changeHandler}
                     onFocus={this.selectAll}
                 />
                 <div className="arrow">+</div>
@@ -136,40 +136,44 @@ export default class ZeroPacker extends React.Component {
                     id={IDS.symbols}
                     label="Symbols for packing"
                     className="symbols"
-                    value={this.state[IDS.symbols]}
-                    onChange={this.changeHandler(IDS.symbols)}
+                    state={this.state}
+                    onChange={this.changeHandler}
                     onFocus={this.selectAll}
                 />
-                <LabeledTextarea
+                <LabeledInput
                     id={IDS.textToPacked}
                     label="Text"
-                    value={this.state[IDS.textToPacked]}
-                    onChange={this.changeHandler(IDS.textToPacked)}
+                    state={this.state}
+                    onChange={this.changeHandler}
                     onFocus={this.selectAll}
+                    multiLine
                 />
                 <div className="arrow">→</div>
-                <LabeledTextarea
+                <LabeledInput
                     id={IDS.packedFromText}
                     label="Packed"
                     value={this.getEncoded()}
                     readOnly
                     onClick={this.selectAll}
+                    multiLine
                 />
                 <button className="move" onClick={this.move}>Move packed ↓</button>
-                <LabeledTextarea
+                <LabeledInput
                     id={IDS.packedToText}
                     label="Packed"
-                    value={this.state[IDS.packedToText]}
-                    onChange={this.changeHandler(IDS.packedToText)}
+                    state={this.state}
+                    onChange={this.changeHandler}
                     onClick={this.selectAll}
+                    multiLine
                 />
                 <div className="arrow">→</div>
-                <LabeledTextarea
+                <LabeledInput
                     id={IDS.textFromPacked}
                     label="Text"
                     value={this.getDecoded()}
                     readOnly
                     onClick={this.selectAll}
+                    multiLine
                 />
             </div>
         )
