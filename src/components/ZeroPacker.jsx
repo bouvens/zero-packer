@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import { encodeToSymbols, decodeFromSymbols } from '../coder'
-import { SettersBlock } from './SettersBlock'
-import { LabeledConnector, LabeledInput } from './LabeledControl'
+import StateControl from './StateControl'
 import './ZeroPacker.css'
 
 export default class ZeroPacker extends React.Component {
@@ -55,33 +54,33 @@ export default class ZeroPacker extends React.Component {
     render () {
         return (
             <div className="encoder">
-                <SettersBlock
+                <StateControl.SettersBlock
                     setters={this.props.setters}
                     setState={(state) => this.setState(state)}
                 />
-                <LabeledConnector
+                <StateControl.Connector
                     state={this.state}
                     onChange={this.changeHandler}
                     onFocus={this.selectAll}
                 >
-                    <LabeledInput
+                    <StateControl.Input
                         id={this.IDS.leader}
                         label="Leading symbol"
                         className="leader"
                     />
                     <div className="arrow">+</div>
-                    <LabeledInput
+                    <StateControl.Input
                         id={this.IDS.symbols}
                         label="Symbols for packing"
                         className="symbols"
                     />
-                    <LabeledInput
+                    <StateControl.Input
                         id={this.IDS.textToPacked}
                         label="Text"
                         multiLine
                     />
                     <div className="arrow">→</div>
-                    <LabeledInput
+                    <StateControl.Input
                         id={this.IDS.packedFromText}
                         label="Packed"
                         value={this.getEncoded()}
@@ -89,20 +88,20 @@ export default class ZeroPacker extends React.Component {
                         multiLine
                     />
                     <button className="move" onClick={this.move}>Move packed ↓</button>
-                    <LabeledInput
+                    <StateControl.Input
                         id={this.IDS.packedToText}
                         label="Packed"
                         multiLine
                     />
                     <div className="arrow">→</div>
-                    <LabeledInput
+                    <StateControl.Input
                         id={this.IDS.textFromPacked}
                         label="Text"
                         value={this.getDecoded()}
                         readOnly
                         multiLine
                     />
-                </LabeledConnector>
+                </StateControl.Connector>
             </div>
         )
     }
