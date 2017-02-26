@@ -28,14 +28,16 @@ export class Input extends React.Component {
     id = `labeled-control-${this.props.id}`
     stateName = this.props.stateName || this.props.id
 
+    refHandler = (control) => { this.control = control }
+
     render () {
         return (
             <div className="labeled-input">
-                <label htmlFor={this.id}>{this.props.label}: </label>
+                <label htmlFor={this.id}>{this.props.label}</label>
                 <this.inner
                     id={this.id}
                     label={this.props.label}
-                    ref={(control) => { this.control = control }}
+                    ref={this.refHandler}
                     value={this.props.state[this.stateName] || this.props.value}
                     readOnly={this.props.readOnly}
                     onChange={this.props.onChange(this.stateName)}

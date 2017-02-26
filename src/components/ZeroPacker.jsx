@@ -50,13 +50,14 @@ export default class ZeroPacker extends React.Component {
     }
 
     selectAll = (_this) => () => _this.control.setSelectionRange(0, _this.control.value.length)
+    setStateHandler = (state) => this.setState(state)
 
     render () {
         return (
             <div className="encoder">
                 <StateControl.SettersBlock
                     setters={this.props.setters}
-                    setState={(state) => this.setState(state)}
+                    setState={this.setStateHandler}
                 />
                 <StateControl.Connector
                     state={this.state}

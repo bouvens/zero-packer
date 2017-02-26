@@ -34,3 +34,13 @@
     padding: 0.7em 1em;
     margin: 3em auto 4em auto;
 }
+
+.labeled-input label {
+    width: 30%;
+    text-align: right;
+}
+
+.labeled-input textarea {
+    width: 65%;
+    vertical-align: top;
+}
