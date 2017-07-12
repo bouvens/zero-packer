@@ -1,8 +1,8 @@
-.setter {
+.state-control-setter {
     margin-bottom: 15px;
 }
 
-.setter a {
+.state-control-setter a {
     padding-bottom: 1px;
     border-bottom: 1px dashed;
     cursor: pointer;
@@ -18,7 +18,7 @@
     width: 52%;
 }
 
-.labeled-input {
+.state-control-input {
     display: inline-block;
     width: 45%;
 }
@@ -35,12 +35,12 @@
     margin: 3em auto 4em auto;
 }
 
-.labeled-input label {
+.state-control-input label {
     width: 30%;
     text-align: right;
 }
 
-.labeled-input textarea {
+.state-control-input textarea {
     width: 65%;
     vertical-align: top;
 }

@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { SettersBlock, Connector, Input } from 'state-control'
 import { encodeToSymbols, decodeFromSymbols } from '../coder'
-import { SettersBlock, Connector, Input } from './StateControl'
 import './ZeroPacker.css'
 
 export default class ZeroPacker extends React.Component {
@@ -20,11 +21,10 @@ export default class ZeroPacker extends React.Component {
         textFromPacked: 'textFromPacked',
     }
 
-    changeHandler = (state) => (event) => {
-        const initialValue = event.target.value
+    changeHandler = (name, initialValue) => {
         let value
 
-        switch (state) {
+        switch (name) {
             case this.IDS.leader:
                 value = initialValue.slice(-1)
                 break
@@ -38,7 +38,8 @@ export default class ZeroPacker extends React.Component {
             default:
                 value = initialValue
         }
-        this.setState({ [state]: value })
+
+        this.setState({ [name]: value })
     }
 
     getSymbols = () => (this.state.symbols.length > 2 ? this.state.symbols : this.props.defaults.symbols)
@@ -50,14 +51,13 @@ export default class ZeroPacker extends React.Component {
     }
 
     selectAll = (_this) => () => _this.control.setSelectionRange(0, _this.control.value.length)
-    setStateHandler = (state) => this.setState(state)
 
     render () {
         return (
             <div className="encoder">
                 <SettersBlock
                     setters={this.props.setters}
-                    setState={this.setStateHandler}
+                    setHandler={this.changeHandler}
                 />
                 <Connector
                     state={this.state}
