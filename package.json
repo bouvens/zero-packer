@@ -2,7 +2,7 @@
   "name": "zero-packer",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://bouvens.github.io/zero-packer",
+  "homepage": "https://bouvens.github.io/zero-packer/",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^3.18.0",
@@ -14,6 +14,7 @@
     "react-scripts": "0.9.5"
   },
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -22,13 +23,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "react-scripts build && gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "author": "Alexander Demin <web@developr.ru> (https://bouvens.github.io/)",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/bouvens/zero-packer"
+    "type": "git",
+    "url": "https://github.com/bouvens/zero-packer"
   }
 }
