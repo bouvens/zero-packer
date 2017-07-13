@@ -27,7 +27,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "author": "Alexander Demin <web@developr.ru> (https://bouvens.github.io/)",
+  "author": "Alexander Demin <bouvens@gmail.com> (https://bouvens.github.io/)",
   "license": "MIT",
   "repository": {
     "type": "git",
