@@ -1,6 +1,5 @@
 import React from 'react'
 import ZeroPacker from './components/ZeroPacker'
-import './App.css'
 
 const DEFAULTS = {
     leader: '0',
@@ -21,32 +20,32 @@ const DEFAULTS = {
 
 const SETTERS = [
     {
+        text: 'Zero-width symbols with leading zero',
         params: {
             leader: DEFAULTS.leader,
             symbols: DEFAULTS.symbols,
         },
-        text: 'Zero-width symbols with leading zero'
     },
     {
+        text: 'Comma separated unicode codes',
         params: {
             leader: '',
             symbols: '0123456789,',
         },
-        text: 'Comma separated unicode codes'
     },
     {
+        text: 'Arbitrary symbols',
         params: {
             leader: '',
             symbols: '↑↓←→BA ',
         },
-        text: 'Arbitrary symbols'
     },
     {
+        text: 'More',
         params: {
             leader: '',
             symbols: '·•×⌀',
         },
-        text: 'More'
     },
 ]
 
