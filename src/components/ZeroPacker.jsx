@@ -22,21 +22,20 @@ export default class ZeroPacker extends React.Component {
     }
 
     changeHandler = (name, initialValue) => {
-        let value
+        let value = initialValue.toString()
 
         switch (name) {
             case this.IDS.leader:
-                value = initialValue.slice(-1)
+                value = value.slice(-1)
                 break
             case this.IDS.symbols:
-                value = initialValue
+                value = value
                     .split('')
                     .filter((char, i, arr) => arr.indexOf(char) === i && char !== this.state.leader)
                     .join('')
                     .slice(-36)
                 break
             default:
-                value = initialValue
         }
 
         this.setState({ [name]: value })
