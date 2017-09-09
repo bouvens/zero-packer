@@ -1,12 +1,5 @@
-.state-control-setter {
+.state-control-setters {
     margin-bottom: 15px;
-}
-
-.state-control-setter a {
-    padding-bottom: 1px;
-    border-bottom: 1px dashed;
-    cursor: pointer;
-    color: blue;
 }
 
 #labeled-control-leader {
@@ -29,7 +22,7 @@
     text-align: center;
 }
 
-.move {
+.move-button {
     display: block;
     padding: 0.7em 1em;
     margin: 3em auto 4em auto;
@@ -42,5 +35,4 @@
 
 .state-control-input textarea {
     width: 65%;
-    vertical-align: top;
 }
