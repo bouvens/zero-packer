@@ -59,3 +59,17 @@ export function decodeFromSymbols (stringForDecoding, symbols, leader) {
 ```
 
 The code processes every character in string as it Unicode number. The number is converted to a base equal to the number of characters for encoding minus 1. Then each number is mapped to the appropriate character for encoding. The last character is used as a separator.
+
+## How to run locally
+
+Run in bash:
+```Shell
+git clone git@github.com:bouvens/zero-packer.git
+cd zero-packer
+npm run start
+```
+
+Also there's a script for local build:
+```Shell
+npm run build
+```
