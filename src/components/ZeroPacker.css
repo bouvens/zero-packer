@@ -2,15 +2,6 @@
     margin-bottom: 15px;
 }
 
-#labeled-control-leader {
-    width: 20px;
-    margin-bottom: 5em;
-}
-
-#labeled-control-symbols {
-    width: 52%;
-}
-
 .state-control-input {
     display: inline-block;
     width: 45%;

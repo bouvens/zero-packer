@@ -6,11 +6,15 @@ import './ZeroPacker.css'
 
 export default class ZeroPacker extends React.Component {
     static propTypes = {
-        defaults: PropTypes.object.isRequired,
-        setters: PropTypes.array.isRequired,
+        defaults: PropTypes.objectOf(PropTypes.string).isRequired,
+        setters: PropTypes.arrayOf(PropTypes.object).isRequired,
     }
 
     state = this.props.defaults
+
+    getSymbols = () => (this.state.symbols.length > 2 ? this.state.symbols : this.props.defaults.symbols)
+    getEncoded = () => encodeToSymbols(this.state.textToPacked, this.getSymbols(), this.state.leader)
+    getDecoded = () => decodeFromSymbols(this.state.packedToText, this.getSymbols(), this.state.leader)
 
     IDS = {
         leader: 'leader',
@@ -40,10 +44,6 @@ export default class ZeroPacker extends React.Component {
 
         this.setState({ [name]: value })
     }
-
-    getSymbols = () => (this.state.symbols.length > 2 ? this.state.symbols : this.props.defaults.symbols)
-    getEncoded = () => encodeToSymbols(this.state.textToPacked, this.getSymbols(), this.state.leader)
-    getDecoded = () => decodeFromSymbols(this.state.packedToText, this.getSymbols(), this.state.leader)
 
     move = () => {
         this.setState({ [this.IDS.packedToText]: this.getEncoded() })
@@ -87,7 +87,7 @@ export default class ZeroPacker extends React.Component {
                         readOnly
                         multiLine
                     />
-                    <button className="move-button" onClick={this.move}>Move packed ↓</button>
+                    <button className="move-button" onClick={this.move}>Copy packed ↓</button>
                     <Input
                         id={this.IDS.packedToText}
                         label="Packed"
