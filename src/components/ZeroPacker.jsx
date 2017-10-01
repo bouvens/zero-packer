@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SettersBlock, Connector, Input } from 'state-control'
-import { encodeToSymbols, decodeFromSymbols } from '../coder'
+import { Connector, Input, SettersBlock } from 'state-control'
+import { decodeFromSymbols, encodeToSymbols } from '../coder'
 import './ZeroPacker.css'
 
 export default class ZeroPacker extends React.Component {
@@ -49,60 +49,60 @@ export default class ZeroPacker extends React.Component {
         this.setState({ [this.IDS.packedToText]: this.getEncoded() })
     }
 
-    selectAll = (_this) => () => _this.control.setSelectionRange(0, _this.control.value.length)
+    selectAll = (control) => control.setSelectionRange(0, control.value.length)
 
     render () {
-        return (
-            <div className="encoder">
-                <SettersBlock
-                    setters={this.props.setters}
-                    setHandler={this.changeHandler}
-                    className="state-control-setters"
+        return [
+            <SettersBlock
+                setters={this.props.setters}
+                setHandler={this.changeHandler}
+                className="state-control-setters"
+                key="setters"
+            />,
+            <Connector
+                state={this.state}
+                onChange={this.changeHandler}
+                onFocus={this.selectAll}
+                className="state-control-input"
+                key="connector"
+            >
+                <Input
+                    id={this.IDS.leader}
+                    label="Leading symbol"
                 />
-                <Connector
-                    state={this.state}
-                    onChange={this.changeHandler}
-                    onFocus={this.selectAll}
-                    className="state-control-input"
-                >
-                    <Input
-                        id={this.IDS.leader}
-                        label="Leading symbol"
-                    />
-                    <div className="arrow">+</div>
-                    <Input
-                        id={this.IDS.symbols}
-                        label="Symbols for packing"
-                    />
-                    <Input
-                        id={this.IDS.textToPacked}
-                        label="Text"
-                        multiLine
-                    />
-                    <div className="arrow">→</div>
-                    <Input
-                        id={this.IDS.packedFromText}
-                        label="Packed"
-                        value={this.getEncoded()}
-                        readOnly
-                        multiLine
-                    />
-                    <button className="move-button" onClick={this.move}>Copy packed ↓</button>
-                    <Input
-                        id={this.IDS.packedToText}
-                        label="Packed"
-                        multiLine
-                    />
-                    <div className="arrow">→</div>
-                    <Input
-                        id={this.IDS.textFromPacked}
-                        label="Text"
-                        value={this.getDecoded()}
-                        readOnly
-                        multiLine
-                    />
-                </Connector>
-            </div>
-        )
+                <div className="arrow">+</div>
+                <Input
+                    id={this.IDS.symbols}
+                    label="Symbols for packing"
+                />
+                <Input
+                    id={this.IDS.textToPacked}
+                    label="Text"
+                    multiLine
+                />
+                <div className="arrow">→</div>
+                <Input
+                    id={this.IDS.packedFromText}
+                    label="Packed"
+                    value={this.getEncoded()}
+                    readOnly
+                    multiLine
+                />
+                <button className="move-button" onClick={this.move}>Copy packed ↓</button>
+                <Input
+                    id={this.IDS.packedToText}
+                    label="Packed"
+                    multiLine
+                />
+                <div className="arrow">→</div>
+                <Input
+                    id={this.IDS.textFromPacked}
+                    label="Text"
+                    value={this.getDecoded()}
+                    readOnly
+                    multiLine
+                />
+            </Connector>,
+        ]
     }
 }
