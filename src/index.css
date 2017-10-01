@@ -3,9 +3,17 @@
 }
 
 body {
-    margin: 2em 4em;
     padding: 0;
     font-family: sans-serif;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+@media (min-width: 800px) {
+    body {
+        margin-left: 4em;
+        margin-right: 4em;
+    }
 }
 
 hr {
