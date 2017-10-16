@@ -1,6 +1,7 @@
 {
   "name": "zero-packer",
   "version": "1.0.0",
+  "description": "Encoding strings with given sets of characters",
   "private": true,
   "homepage": "https://bouvens.github.io/zero-packer/",
   "devDependencies": {
