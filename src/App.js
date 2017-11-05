@@ -18,36 +18,24 @@ const DEFAULTS = {
     packedToText: '',
 }
 
-const SETTERS = [
-    {
-        text: 'Zero-width symbols with leading zero',
-        params: {
-            leader: DEFAULTS.leader,
-            symbols: DEFAULTS.symbols,
-        },
+const SETTERS = {
+    'Zero-width symbols with leading zero': {
+        leader: DEFAULTS.leader,
+        symbols: DEFAULTS.symbols,
     },
-    {
-        text: 'Comma separated unicode codes',
-        params: {
-            leader: '',
-            symbols: '0123456789,',
-        },
+    'Comma separated unicode codes': {
+        leader: '',
+        symbols: '0123456789,',
     },
-    {
-        text: 'Arbitrary symbols',
-        params: {
-            leader: '',
-            symbols: '↑↓←→BA ',
-        },
+    'Arbitrary symbols': {
+        leader: '',
+        symbols: '↑↓←→BA ',
     },
-    {
-        text: 'More',
-        params: {
-            leader: '',
-            symbols: '·•×⌀',
-        },
+    More: {
+        leader: '',
+        symbols: '·•×⌀',
     },
-]
+}
 
 const App = () => (
     <ZeroPacker

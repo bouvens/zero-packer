@@ -7,7 +7,7 @@ import './ZeroPacker.css'
 export default class ZeroPacker extends React.Component {
     static propTypes = {
         defaults: PropTypes.objectOf(PropTypes.string).isRequired,
-        setters: PropTypes.arrayOf(PropTypes.object).isRequired,
+        setters: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
     }
 
     state = this.props.defaults
