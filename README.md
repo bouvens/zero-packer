@@ -66,6 +66,7 @@ Run in bash:
 ```Shell
 git clone git@github.com:bouvens/zero-packer.git
 cd zero-packer
+npm install
 npm run start
 ```
 
