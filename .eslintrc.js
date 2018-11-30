@@ -48,6 +48,7 @@ module.exports = {
         'object-curly-newline': ['off'],
         'semi': ['warn', 'never'],
         'space-before-function-paren': [1, 'always'],
+        "react/destructuring-assignment": ['off', 'always'],
         'react/no-direct-mutation-state': 'error',
         'react/jsx-filename-extension': ['warn', { "extensions": [".js", ".jsx"] }],
         'react/jsx-space-before-closing' : [ 'warn', 'always' ],
