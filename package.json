@@ -6,18 +6,18 @@
   "homepage": "https://bouvens.github.io/zero-packer/",
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-import-resolver-webpack": "^0.11.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^2.0.1",
-    "react-scripts": "2.1.1"
+    "react-scripts": "^2.1.8"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "state-control": "^1.2.0"
+    "state-control": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
