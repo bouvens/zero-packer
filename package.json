@@ -28,10 +28,7 @@
   },
   "author": "Alexander Demin <bouvens@gmail.com> (https://bouvens.github.io/)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bouvens/zero-packer"
-  },
+  "repository": "github:bouvens/zero-packer",
   "browserslist": [
     ">0.2%",
     "not dead",
