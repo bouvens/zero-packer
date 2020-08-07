@@ -8,11 +8,11 @@ This experiment made with [state-control ![npm][npm-badge]][npm]
 
 ## What's this?
 
-Encipherer encodes strings using selected set of symbols (from 3 to 36). It just takes any Unicode string and converts it. You can also decode resulting string.
+This encipherer encodes strings using a selected set of symbols (from 3 to 36). It just takes any Unicode string and converts it. You can also decode the resulting string.
 
 ## How can I use the Zero-Width Packer?
 
-Packer can be used for steganography with zero-width symbols.
+You can use the packer for steganography with zero-width symbols.
 
 ## Encoding and decoding
 
@@ -58,7 +58,7 @@ export function decodeFromSymbols (stringForDecoding, symbols, leader) {
 }
 ```
 
-The code processes every character in string as it Unicode number. The number is converted to a base equal to the number of characters for encoding minus 1. Then each number is mapped to the appropriate character for encoding. The last character is used as a separator.
+The code processes every character in the string as its Unicode number. The number is converted to a base equal to the number of characters for encoding minus 1. Then each number is mapped to the appropriate symbol for encoding. The last character is used as a separator.
 
 ## How to run locally
 
@@ -70,7 +70,7 @@ npm install
 npm run start
 ```
 
-Also there's a script for local build:
+Also, there's a script for a local build:
 ```Shell
 npm run build
 ```
