@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "react-scripts build && gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d build",
     "eslint": "eslint --ext .js,.jsx ./src",
     "eslint:fix": "eslint --fix --ext .js,.jsx  ./src",
     "eject": "react-scripts eject"
