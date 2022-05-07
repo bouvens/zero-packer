@@ -2,7 +2,7 @@
 
 ### [Demo](https://bouvens.github.io/zero-packer/)
 
-This experiment made with [state-control ![npm][npm-badge]][npm]
+This experiment is made with [state-control ![npm][npm-badge]][npm]
 
 [npm-badge]: https://img.shields.io/npm/v/state-control.png?style=flat-square
 
@@ -10,16 +10,16 @@ This experiment made with [state-control ![npm][npm-badge]][npm]
 
 ## What's this?
 
-This encipherer encodes strings using a selected set of symbols (from 3 to 36). It just takes any Unicode
-string and converts it. You can also decode the resulting string.
+This coder transforms Unicode strings into new ones consisting of any set of symbols (from 3 to 36 ones). You can
+also, decode a resulting string.
 
 ## How can I use the Zero-Width Packer?
 
-You can use the packer for steganography with zero-width symbols.
+The packer can be used for steganography with zero-width symbols or as a non-safe coder.
 
 ## Encoding and decoding
 
-The [core code](https://github.com/bouvens/zero-packer/blob/master/src/coder.js) is pretty small:
+[Core code](https://github.com/bouvens/zero-packer/blob/master/src/coder.js) is quite small:
 
 ```javascript
 export function encodeToSymbols(stringForEncoding, symbols, leader) {
@@ -60,13 +60,13 @@ export function decodeFromSymbols(stringForDecoding, symbols, leader) {
 }
 ```
 
-The code processes every character in the string as its Unicode number. The number is converted to a base
-equal to the number of characters for encoding minus 1. Then each number is mapped to the appropriate symbol
-for encoding. The last character is used as a separator.
+The functions convert every character in an input string to its Unicode number. The number is converted to a
+number that is base _N_. _N_ is equal to the number of characters for encoding minus 1. We have minus 1 because the last character is
+used as a separator. Then each number is mapped to a corresponding symbol for encoding.
 
 ## How to run locally
 
-Run in bash:
+Run in console:
 
 ```Shell
 git clone git@github.com:bouvens/zero-packer.git
