@@ -1,5 +1,11 @@
 .state-control-setters {
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.state-control-setters > * {
+  margin-right: 0.7em;
 }
 
 .move-button {
@@ -12,6 +18,11 @@
   .state-control-input {
     display: inline-block;
     width: 45%;
+  }
+
+  .line-input {
+    display: flex;
+    align-items: center;
   }
 
   .arrow {

@@ -69,27 +69,29 @@ export default class ZeroPacker extends React.Component {
           state={this.state}
           onChange={this.changeHandler}
           onFocus={this.selectAll}
-          className="state-control-input"
           key="connector"
         >
           <Input
             id={this.IDS.leader}
             label="Leading symbol"
+            className="line-input state-control-input"
           />
-          <div className="arrow">+</div>
           <Input
             id={this.IDS.symbols}
             label="Symbols for packing"
+            className="line-input state-control-input"
           />
           <Input
             id={this.IDS.textToPacked}
             label="Text"
+            className="state-control-input"
             multiLine
           />
           <div className="arrow">→</div>
           <Input
             id={this.IDS.packedFromText}
             label="Packed"
+            className="state-control-input"
             value={this.getEncoded()}
             readOnly
             multiLine
@@ -98,12 +100,14 @@ export default class ZeroPacker extends React.Component {
           <Input
             id={this.IDS.packedToText}
             label="Packed"
+            className="state-control-input"
             multiLine
           />
           <div className="arrow">→</div>
           <Input
             id={this.IDS.textFromPacked}
             label="Text"
+            className="state-control-input"
             value={this.getDecoded()}
             readOnly
             multiLine
