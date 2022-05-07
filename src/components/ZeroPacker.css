@@ -1,31 +1,31 @@
 .state-control-setters {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .move-button {
-    display: block;
-    padding: 0.7em 1em;
-    margin: 3em auto 4em auto;
+  display: block;
+  padding: 0.7em 1em;
+  margin: 3em auto 4em auto;
 }
 
 @media (min-width: 800px) {
-    .state-control-input {
-        display: inline-block;
-        width: 45%;
-    }
+  .state-control-input {
+    display: inline-block;
+    width: 45%;
+  }
 
-    .arrow {
-        display: inline-block;
-        width: 5%;
-        text-align: center;
-    }
+  .arrow {
+    display: inline-block;
+    width: 5%;
+    text-align: center;
+  }
 
-    .state-control-input label {
-        width: 30%;
-        text-align: right;
-    }
+  .state-control-input label {
+    width: 30%;
+    text-align: right;
+  }
 
-    .state-control-input textarea {
-        width: 65%;
-    }
+  .state-control-input textarea {
+    width: 65%;
+  }
 }

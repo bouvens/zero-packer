@@ -3,30 +3,32 @@
   "version": "1.0.0",
   "description": "Encoding strings with given sets of characters",
   "private": true,
-  "homepage": "https://bouvens.github.io/zero-packer/",
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-import-resolver-webpack": "^0.11.0",
-    "eslint-plugin-import": "^2.14.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-air": "^0.7.4",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "gh-pages": "^2.0.1",
-    "react-scripts": "^2.1.8"
+    "eslint-plugin-react": "^7.29.4",
+    "gh-pages": "^3.2.3",
+    "react-scripts": "^5.0.1"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "state-control": "^2.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "state-control": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && gh-pages -d build",
-    "test": "react-scripts test --env=jsdom",
+    "eslint": "eslint --ext .js,.jsx ./src",
+    "eslint:fix": "eslint --fix --ext .js,.jsx  ./src",
     "eject": "react-scripts eject"
   },
   "author": "Alexander Demin <bouvens@gmail.com> (https://bouvens.github.io/)",
+  "homepage": "https://bouvens.github.io/zero-packer/",
   "license": "MIT",
   "repository": "github:bouvens/zero-packer",
   "browserslist": [
