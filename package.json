@@ -23,8 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "npm run build && gh-pages -d build",
-    "eslint": "eslint --ext .js,.jsx ./src",
-    "eslint:fix": "eslint --fix --ext .js,.jsx  ./src",
+    "lint": "eslint --ext .js,.jsx ./src",
+    "lint:fix": "eslint --fix --ext .js,.jsx  ./src",
     "eject": "react-scripts eject"
   },
   "author": "Alexander Demin <bouvens@gmail.com> (https://bouvens.github.io/)",
