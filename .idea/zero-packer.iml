@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludePattern pattern="yarn.lock" />
       <excludePattern pattern="yarn-error.log" />
+      <excludePattern pattern="package-lock.json" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
