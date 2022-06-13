@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/zero-packer/static/css/main.b702c2b1.css",
+    "main.css": "/zero-packer/static/css/main.6f001927.css",
     "main.js": "/zero-packer/static/js/main.7243bbb6.js",
     "index.html": "/zero-packer/index.html",
-    "main.b702c2b1.css.map": "/zero-packer/static/css/main.b702c2b1.css.map",
+    "main.6f001927.css.map": "/zero-packer/static/css/main.6f001927.css.map",
     "main.7243bbb6.js.map": "/zero-packer/static/js/main.7243bbb6.js.map"
   },
   "entrypoints": [
-    "static/css/main.b702c2b1.css",
+    "static/css/main.6f001927.css",
     "static/js/main.7243bbb6.js"
   ]
 }
